@@ -1,3 +1,9 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#include <ctype.h>
+
 // Modele uma struct "ContaBancaria"
 // que represente uma conta bancária com número
 // da conta, nome do titular, saldo e tipo de
