@@ -1,0 +1,99 @@
+// Modele uma struct "ContaBancaria"
+// que represente uma conta bancária com número
+// da conta, nome do titular, saldo e tipo de
+// conta (poupança ou corrente). Implemente
+// funções para depositar e sacar dinheiro
+//  da conta, bem como para imprimir o
+//  saldo atual. Crie um programa que utilize
+// essas funções para simular operações
+// bancárias. Crie um menu para as operações
+// disponíveis.
+void cabecalho()
+{
+    printf("\n\t*********É O JOVEM JOSH***********\n");
+}
+void limpatela()
+{
+    system("cls || clear");
+}
+
+int sacarDinheiro(float saldo, float valor)
+{
+    if (saldo >= valor)
+    {
+        saldo -= valor;
+        return 1;
+    }
+    else
+    {
+        printf("\n\tSaldo insuficiente!\n");
+        return 0;
+    }
+}
+int depositarDinheiro(float saldo, float valor)
+{
+    saldo += valor;
+    return 1;
+}
+int main()
+{
+    struct ContaBancaria
+    {
+        char nomeTitular[500];
+        char tipoConta[500];
+        int numConta;
+        float saldo;
+    };
+    struct ContaBancaria conta;
+    int opcao;
+    float valor;
+    cabecalho();
+    printf("\n\tDigite o nome do titular: ");
+    gets(conta.nomeTitular);
+
+    printf("\n\tDigite o tipo da conta (poupança ou corrente): ");
+    gets(conta.tipoConta);
+
+    printf("\n\tDigite o numero da conta: ");
+    scanf("%d", &conta.numConta);
+
+    printf("\n\tDigite o saldo: ");
+    scanf("%f", &conta.saldo);
+    limpatela();
+    do
+    {
+        printf("\n\tMenu de opcoes:\n");
+        printf("\n\t1- Sacar dinheiro");
+        printf("\n\t2- Depositar dinheiro");
+        printf("\n\t3- Ver saldo");
+        printf("\n\t4- Sair");
+       
+        printf("\n\tDigite a opcao: ");
+        scanf("%d", &opcao);
+
+        limpatela();
+
+        switch (opcao)
+        {
+        case 1:
+            printf("\n\tDigite o valor a ser sacado: ");
+            scanf("%f", &valor);
+            sacarDinheiro(conta.saldo, valor);
+            break;
+        case 2:
+            printf("\n\tDigite o valor a ser depositado: ");
+            scanf("%f", &valor);
+            depositarDinheiro(conta.saldo, valor);
+            break;
+        case 3:
+            printf("\n\tSaldo: %.2f", conta.saldo);
+            break;
+        case 4:
+            printf("\n\tObrigado por usar o nosso banco!");
+            break;
+        default:
+            printf("\n\tOpcao invalida!");
+        }
+    } while (opcao != 4);
+    return 0;
+}
