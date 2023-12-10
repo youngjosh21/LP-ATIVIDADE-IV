@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <locale.h>
+#include <ctype.h>
+// Desenvolva uma struct "Produto" que contenha informaÃ§Ãµes como nome
+// preÃ§o e quantidade em estoque. Em seguida, desenvolva um menu para
+// facilitar a escolha das opÃ§Ãµes:
+// 1 - Realizar uma compra
+// 2 - Consultar estoque
+// 3 - Sair do programa.
+
+void cabecalho()
+{
+    printf("\n\t*********É O JOVEM JOSH***********\n");
+}
+void limpacache()
+{
+    fflush(stdin);
+}
+void limpatela()
+{
+    system("cls || clear");
+}
+
+struct produto_mercado
+{
+    char nome[500];
+    float preco;
+    int quantidadeEstoque;
+};
+
+int main()
+{
+    setlocale(LC_ALL, "portuguese");
+    char produto[500];
+    int opcao;
+
+    printf("\n------------------------------------MERCADO -------------------------------------------\n");
+    printf("---------------------------------------");
+    printf("\n-------------------- digite 1 para realizar a compra -----------------\n");
+    printf("\n---------------------------------------\n");
+    printf("\n-------------------- digite 2 para consultar estoque -----------------\n");
+    printf("\n---------------------------------------\n");
+    printf("\n-------------------- digite 3 para encerrar a compra-----------------\n");
+    printf("\n---------------------------------------\n");
+    printf("digte a opção desejada:\n");
+    scanf("%d", &opcao);
+limpatela();
+
+    switch (opcao)
+    {
+    case 1:
+        printf("\nrealizar a compra\n");
+        break;
+    case 2:
+        printf("\nconsultar estoque\n");
+        break;
+    case 3:
+        printf("\nencerrar a compra\n");
+        break;
+
+    default:
+        break;
+    }
+
+    return 0;
+}
