@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <locale.h>
+#include <ctype.h>
+
 
 // Crie uma função chamada "calcularMedia" que recebe como parâmetro uma struct "Aluno"
 // com informações como: nome, data de nascimento, duas notas e média. e retorna a média das notas.
